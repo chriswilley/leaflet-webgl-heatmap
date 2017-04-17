@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ursudio/webgl-heatmap-leaflet.git"
+    "url": "git+https://github.com/chriswilley/webgl-heatmap-leaflet.git"
   },
   "keywords": [
     "heatmap",
@@ -37,10 +37,10 @@
     "leaflet",
     "plugin"
   ],
-  "author": "Ursudio",
+  "author": "Chris Willey",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ursudio/webgl-heatmap-leaflet/issues"
+    "url": "https://github.com/chriswilley/webgl-heatmap-leaflet/issues"
   },
-  "homepage": "https://github.com/ursudio/webgl-heatmap-leaflet#readme"
+  "homepage": "https://github.com/chriswilley/webgl-heatmap-leaflet#readme"
 }

@@ -4,6 +4,8 @@
  * Please attribute Ursudio in any production associated with this JavaScript plugin.
  */
 
+require('./webgl-heatmap/webgl-heatmap.js');
+
 L.WebGLHeatMap = L.Renderer.extend({
 
     // tested on Leaflet 1.0.3
@@ -19,9 +21,12 @@ L.WebGLHeatMap = L.Renderer.extend({
         opacity: 1,
         gradientTexture: false,
         alphaRange: 1,
-        // @option padding: 
+        // @option padding:
         // don't add padding (0 helps with zoomanim)
-        padding: 0
+        padding: 0,
+        // @option blurValue:
+        // blur heatmap canvas using CSS
+        blurValue: 0
     },
 
     _initContainer: function() {
@@ -31,6 +36,7 @@ L.WebGLHeatMap = L.Renderer.extend({
         container.id = 'webgl-leaflet-' + L.Util.stamp(this);
         container.style.opacity = options.opacity;
         container.style.position = 'absolute';
+        container.style.filter = 'blur(' + options.blurValue + 'px)';
 
         try {
             this.gl = window.createWebGLHeatmap({
@@ -40,7 +46,7 @@ L.WebGLHeatMap = L.Renderer.extend({
             });
         } catch (e) {
             console.error(e);
-            
+
             // setup for webgl-less unit testing
             this.gl = {
                 clear: function () {},
