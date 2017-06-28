@@ -63,8 +63,8 @@ L.WebGLHeatMap = L.Renderer.extend({
 
     _destroyContainer: function () {
         delete this._ctx;
-        DomUtil.remove(this._container);
-        DomEvent.off(this._container);
+        L.DomUtil.remove(this._container);
+        L.DomEvent.off(this._container);
         delete this._container;
     },
 
